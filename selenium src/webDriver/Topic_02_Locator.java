@@ -2,7 +2,9 @@ package webDriver;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.locators.RelativeLocator;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -161,6 +163,28 @@ public class Topic_02_Locator {
     // Xpath vs Tag name
         int linkNumber = driver.findElements(By.xpath("//a")).size();
         System.out.println("Tổng số lượng link = " + linkNumber);
+    }
+
+    @Test
+    public void TC_09_Relative_Locator() {
+        driver.get("http://live.techpanda.org/index.php/catalogsearch/advanced/");
+        WebElement priceFromElement = driver.findElement(RelativeLocator.with(By.tagName("input"))
+                .toLeftOf(By.name("price[to]"))
+                .below(By.id("sku"))
+                .above(By.id("tax_class_id")));
+        System.out.println(priceFromElement);
+
+//        // khai báo biến: khi biến đó được sử dụng nhiều lần
+//        String emailAddress = "abc@gmail.com";
+//        By emailTextboxBy = By.cssSelector("");
+//        WebElement emailTextboxElement = driver.findElement(emailTextboxBy);
+//
+//        emailTextboxElement.clear();
+//        emailTextboxElement.isDisplayed();
+//        emailTextboxElement.sendKeys("");
+//
+//        // không khai báo biến: khi chỉ sử dụng biến đó 1 lần, khai báo cũng được nhưng tốn bộn nhớ
+//        driver.findElement(emailTextboxBy).sendKeys("");
     }
 
 
