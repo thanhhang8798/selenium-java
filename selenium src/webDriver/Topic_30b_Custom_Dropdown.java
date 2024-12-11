@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.List;
 
-public class Topic_31_Custom_Dropdown {
+public class Topic_30b_Custom_Dropdown {
     WebDriver driver;
 
     @BeforeClass
@@ -86,8 +86,9 @@ public class Topic_31_Custom_Dropdown {
         driver.get("https://mikerodham.github.io/vue-dropdowns/");
 
         slectCustomDropdown("li.dropdown-toggle", "ul.dropdown-menu>li", "First Option");
-        slectCustomDropdown("li.dropdown-toggle", "ul.dropdown-menu>li", "Third Option");
+        Assert.assertEquals(driver.findElement(By.cssSelector("li.dropdown-toggle")).getText(),"First Option");
 
+        slectCustomDropdown("li.dropdown-toggle", "ul.dropdown-menu>li", "Third Option");
         Assert.assertEquals(driver.findElement(By.cssSelector("li.dropdown-toggle")).getText(),"Third Option");
 
     }
@@ -96,7 +97,7 @@ public class Topic_31_Custom_Dropdown {
         driver.findElement(By.cssSelector(parentLocator)).click();
         List<WebElement> customDropdown = driver.findElements(By.cssSelector(childLocator));
         for (WebElement item : customDropdown) {
-            if (item.getText().equals(option)) {
+            if (item.getText().trim().equals(option)) {  // dùng trim() để xóa khoảng trống của text
                 item.click();
                 break;
             }

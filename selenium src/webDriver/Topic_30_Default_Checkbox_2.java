@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -19,7 +20,12 @@ public class Topic_30_Default_Checkbox_2 {
 
     @BeforeClass
     public void beforeClass() {
-        driver = new FirefoxDriver();
+        // bỏ qua popup xin quyền vị trí
+        FirefoxOptions option = new FirefoxOptions();
+        option.addPreference("geo.enabled", false);
+        option.addPreference("geo.provider.use_corelocation", false);
+        driver = new FirefoxDriver(option);
+
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
 
