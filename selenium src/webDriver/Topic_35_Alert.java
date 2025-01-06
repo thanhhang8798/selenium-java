@@ -23,6 +23,7 @@ public class Topic_35_Alert {
         // driver.manage().window().maximize();
     }
 
+    // làm TC 7, 8, 9, 11 topic 09 https://docs.google.com/document/d/1kPgRirztWIC9R_XiZFNYI3E0KVWfrzf2x_Het5MRj3s/edit?tab=t.0
     @Test
     public void TC_01_Accept_Alert() {
         driver.get("https://automationfc.github.io/basic-form/index.html");
@@ -30,6 +31,8 @@ public class Topic_35_Alert {
 
         // hàm wait: chờ cho 1 alert được xuất hiện trong HTML. hàm này bao gồm cả switch vào alert
         Alert acceptAlert = new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.alertIsPresent());
+
+        // switch sang alert: driver.switchTo().alert();
 
         // verify text của alert
         Assert.assertEquals(acceptAlert.getText(),"I am a JS Alert");
@@ -96,6 +99,14 @@ public class Topic_35_Alert {
         driver.get(authenLink);
         Assert.assertEquals(driver.findElement(By.cssSelector("div#content p"))
                 .getText(),"Congratulations! You must have the proper credentials.");
+    }
+
+    @Test
+    public void TC_06_Dismiss_Authentication_Alert() throws InterruptedException {
+        driver.get("https://the-internet.herokuapp.com/basic_auth");
+        Alert authenAlert = new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.alertIsPresent());
+        Thread.sleep(5000);
+        authenAlert.dismiss();
     }
 
     @AfterClass

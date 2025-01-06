@@ -27,8 +27,12 @@ public class Topic_02_Scroll {
         driver.get("https://demos.telerik.com/kendo-ui/checkbox/index");
         Thread.sleep(3000);
         // scroll xuống element cần thực hiện test, nếu không khi chạy sẽ báo lỗi không tìm thấy element
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", driver.findElement(By.cssSelector("ul.tabstrip-items")));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",
+                driver.findElement(By.cssSelector("ul.tabstrip-items")));
 
+
+        // chrome, edge auto scroll
+        // firefox mới phải dùng lệnh để scroll
     }
 
 

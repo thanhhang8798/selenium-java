@@ -81,8 +81,9 @@ public class Topic_24_WebElement_Commands {
         elementRect.getDimension(); // giống getSize
         elementRect.getPoint(); // giống getLocation
 
-        //*** getText: lấy ra text của element
+        //*** getText: lấy ra text của element, auto cắt khoảng trắng đầu cuối của text
         // chỉ áp dụng cho text nằm ngoài attribute, không dùng cho text placeholder vì nó nằm trong attribute placeholder
+        // lấy text trên UI, không dùng text của html
         firstNameTextbox.getText();
 
         // getAtribute: truyền vào tên attribute

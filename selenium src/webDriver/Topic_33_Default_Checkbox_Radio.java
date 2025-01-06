@@ -106,6 +106,8 @@ public class Topic_33_Default_Checkbox_Radio {
         Assert.assertFalse(driver.findElement(indeterminate).isSelected());
     }
 
+    // laàm bai tập TC 2, 3, 4 topic 09 https://docs.google.com/document/d/1kPgRirztWIC9R_XiZFNYI3E0KVWfrzf2x_Het5MRj3s/edit?tab=t.0#heading=h.vg4t8lch9n7c
+
     @Test
     public void TC_05_AllCheckbox() {
         driver.get("https://automationfc.github.io/multiple-fields/");

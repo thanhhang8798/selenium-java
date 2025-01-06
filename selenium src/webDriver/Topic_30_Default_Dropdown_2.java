@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.List;
 
-public class Topic_30_Default_Checkbox_2 {
+public class Topic_30_Default_Dropdown_2 {
     WebDriver driver;
     Select select;
 

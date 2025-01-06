@@ -16,6 +16,8 @@ public class Topic_01_CloudFlare {
 
     @BeforeClass
     public void beforeClass() {
+        // thao tacs với browser đã đưpực manual từ trước - giống thao tác của end user
+        // dùng để chạy các trang chặn automation test
         EdgeOptions edgeOptions = new EdgeOptions();
         edgeOptions.addArguments("--user-data-dir=C:\\Users\\THANH HANG\\AppData\\Local\\Microsoft\\Edge\\User Data\\");
         edgeOptions.addArguments("--profile-directory=Profile 1");

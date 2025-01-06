@@ -28,7 +28,12 @@ public class Topic_00_Template {
 
     @Test
     public void TC_02_() {
+        driver.get("");
+    }
 
+    @Test
+    public void TC_03_() {
+        driver.get("");
     }
 
     @AfterClass
