@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class Topic_02_Scroll {
+public class Topic_03_SplitUrl {
     WebDriver driver;
 
     @BeforeClass
@@ -22,15 +22,19 @@ public class Topic_02_Scroll {
 
     @Test
     public void TC_01_cloudFlare() throws InterruptedException {
-        driver.get("https://demos.telerik.com/kendo-ui/checkbox/index");
-        Thread.sleep(3000);
-        // scroll xuống element cần thực hiện test, nếu không khi chạy sẽ báo lỗi không tìm thấy element
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",
-                driver.findElement(By.cssSelector("ul.tabstrip-items")));
+        String authenLink = "https://the-internet.herokuapp.com/";
+        String username = "admin";
+        String password = "admin";
 
+        // tách url
+        String[] text = authenLink.split("//");
+        System.out.println(text[0]);
+        System.out.println(text[1]);
 
-        // chrome, edge auto scroll
-        // firefox mới phải dùng lệnh javascript để scroll
+        // gán user, password vào url
+        authenLink = text[0] + "//" + username + ":" + password + "@" + text[1];
+        System.out.println(authenLink);
+        driver.get(authenLink);
     }
 
 

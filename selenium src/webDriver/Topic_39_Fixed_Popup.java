@@ -37,6 +37,8 @@ public class Topic_39_Fixed_Popup {
         driver.findElement(By.cssSelector("div[role='dialog'] button[type='button']")).click();
 
         // kiểm tra popup không còn hiển thị
+        // vì khi tắt popup thì không tìm thấy element nữa => không dùng được hàm isDisplay
+        // => dùng list elements, khi không tìm thấy thì trả kêết quả là 0
         Assert.assertEquals(driver.findElements(By.cssSelector("div.auth-form")).size(),0);
             // không được dùng assertFalse.isDisplayed để verify
     }
