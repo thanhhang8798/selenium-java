@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.function.Function;
 
-public class Topic_51_Wait_Fluent {
+public class Topic_52_Wait_Fluent {
     WebDriver driver;
 
     // khai báo

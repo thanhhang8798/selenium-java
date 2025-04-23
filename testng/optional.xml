@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Web UI Automation testing" verbose="1">
+    <parameter name="environmentName" value="prod"/>
+    <!--     <parameter name="platformName" value="windows"></parameter> -->
+    <test name="Run on Chrome">
+        <parameter name="browser" value="Chrome"/>
+        <classes>
+            <class name="basic.Topic_05_Optional"/>
+        </classes>
+    </test>
+    <!--     <test name="Run on Firefox"> -->
+    <!--         <parameter name="browser" value="Firefox"></parameter> -->
+    <!--         <classes> -->
+    <!--             <class name="basic.Topic_04_Multiple_Environment"/> -->
+    <!--         </classes> -->
+    <!--     </test> -->
+    <!--     <test name="Run on Edge"> -->
+    <!--         <parameter name="browser" value="Edge"></parameter> -->
+    <!--         <classes> -->
+    <!--             <class name="basic.Topic_04_Multiple_Environment"/> -->
+    <!--         </classes> -->
+    <!--     </test> -->
+</suite>
