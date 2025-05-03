@@ -1,0 +1,20 @@
+<suite name="Web UI Automation testing" verbose="1">
+    <test name="Run on Chrome">
+        <parameter name="browser" value="Chrome"/>
+        <packages>
+            <package name="basic"/>
+        </packages>
+    </test>
+    <test name="Run on Firefox">
+        <parameter name="browser" value="Firefox"/>
+        <packages>
+            <package name="basic"/>
+        </packages>
+    </test>
+    <test name="Run on Edge">
+        <parameter name="browser" value="Edge"/>
+        <packages>
+            <package name="basic"/>
+        </packages>
+    </test>
+</suite>

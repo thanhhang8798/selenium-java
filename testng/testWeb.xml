@@ -1,0 +1,10 @@
+<suite name="Test web" verbose="1">
+    <test name="Run on web">
+        <parameter name="browser" value="Firefix"/>
+        <parameter name="version" value="137"/>
+        <classes>
+            <class name="basic.Topic_08_Web1"/>
+            <class name="basic.Topic_09_Web2"/>
+        </classes>
+    </test>
+</suite>

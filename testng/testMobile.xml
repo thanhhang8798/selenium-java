@@ -1,0 +1,9 @@
+<suite name="Test mobile" verbose="1">
+    <test name="Run on mobile">
+        <parameter name="device" value="Samsung S25"/>
+        <classes>
+            <class name="basic.Topic_10_Mobile1"/>
+            <class name="basic.Topic_11_Mobile2"/>
+        </classes>
+    </test>
+</suite>

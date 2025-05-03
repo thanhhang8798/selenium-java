@@ -1,0 +1,6 @@
+<suite name="allSuites" verbose="1" parallel="tests" thread-count="2">
+    <suite-files>
+        <suite-file path="testMobile.xml"/>
+        <suite-file path="testWeb.xml"/>
+    </suite-files>
+</suite>
